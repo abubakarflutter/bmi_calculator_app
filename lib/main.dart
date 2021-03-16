@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'main_screen.dart';
 
-void main() {MyApp();}
+void main() => runApp(BMICalculator());
 
-class MyApp extends StatelessWidget {
+class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xFF0A0E21),
+        scaffoldBackgroundColor: Color(0xFF0A0E21),
+      ),
+      home: MainScreen(),
+    );
   }
 }
-
