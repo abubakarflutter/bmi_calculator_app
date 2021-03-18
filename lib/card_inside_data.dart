@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
 
-const cardInsideTextColor = Color(0xFF8D8E98);
 
 // ignore: camel_case_types
 class cardInsideData extends StatelessWidget {
@@ -20,9 +20,7 @@ class cardInsideData extends StatelessWidget {
             size: 80
         ),
         SizedBox(height: 10.0,),
-        Text(textLabel, style: TextStyle(
-            color: cardInsideTextColor
-        ),)
+        Text(textLabel, style: cardLabelTextStyle)
       ],
     );
   }
