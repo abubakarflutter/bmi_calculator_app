@@ -17,7 +17,7 @@ class cardInsideData extends StatelessWidget {
       children: [
         Icon(
             cardIcon,
-            size: 80
+            size: 70
         ),
         SizedBox(height: 10.0,),
         Text(textLabel, style: cardLabelTextStyle)

@@ -20,7 +20,7 @@ class BottomButton extends StatelessWidget {
             insidetext,
             style: TextStyle(
                 color: Colors.white,
-                fontSize: 30.0
+                fontSize: 25.0
             ),
           ),
         ),

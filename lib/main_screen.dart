@@ -179,8 +179,8 @@ class _MainScreenState extends State<MainScreen> {
             CalculatorBrain calc = CalculatorBrain(height: height, weight: weight);
 
     Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage(
-      bmiInterpretationFinalPage: calc.resultInterpretation(),
       bmiBigResultText: calc.BMICalculator(),
+      bmiInterpretationFinalPage: calc.resultInterpretation(),
       bmiSmallTextIndicator: calc.bmiTextResult(),
     )));
     }, insidetext: "CALCULATE",)

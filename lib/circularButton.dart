@@ -12,7 +12,7 @@ class CircularIconButton extends StatelessWidget {
     return RawMaterialButton(
       elevation: 1.0,
       onPressed: onPress,
-      child: Icon(icon),
+      child: Icon(icon, size: 20.0,),
       constraints: BoxConstraints.tightFor(
           width: 50.0, height: 50.0
       ),

@@ -9,11 +9,11 @@ const cardInsideTextColor = Color(0xFF8D8E98);
 
 
 const cardLabelTextStyle = TextStyle(
-  fontSize: 18.0,
+  fontSize: 15.0,
   color: Color(0xFF8D8E98),
 );
 
 const cardBigTextStyle = TextStyle(
-fontSize: 50.0,
+fontSize: 35.0,
 fontWeight: FontWeight.w900,
 );

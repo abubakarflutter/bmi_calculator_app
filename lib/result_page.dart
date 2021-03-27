@@ -31,7 +31,7 @@ class ResultPage extends StatelessWidget {
               child: Text('You Result',
                 style: TextStyle(
                 color: Colors.white,
-                fontSize: 45.0,
+                fontSize: 35.0,
                 fontWeight: FontWeight.w900
               ),),
             ),
@@ -47,23 +47,23 @@ class ResultPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(bmiSmallTextIndicator, style: TextStyle(
-                  fontSize: 25.0,
+                  fontSize: 20.0,
                   color: Color(0xFF24D876)
                 ),),
                 Text(bmiBigResultText, style: TextStyle(
-                    fontSize: 100.0,
+                    fontSize: 70.0,
                     fontWeight: FontWeight.w900
                 ),),
                 Text(
                   "Normal BMI Ranges 18 to 24",
                   textAlign: TextAlign.center,
                   style:TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 17.0,
                 ),),
                 Text(bmiInterpretationFinalPage,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 15.0,
                 ),),
               ],
             ),
