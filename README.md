@@ -1,8 +1,10 @@
 # bmi_calculator
 
-# This repo haven't commited wih full code yet. I'm trying to commit code daily. 
-
 A new Flutter application that calculates BMI with beautiful UI
+
+![Screenshot_1616862125](https://user-images.githubusercontent.com/55432552/112718870-08088b80-8eb3-11eb-95dd-7686feae00e9.png)
+![Screenshot_1616878809](https://user-images.githubusercontent.com/55432552/112718906-30908580-8eb3-11eb-8741-4327a231cb1e.png)
+
 
 ## Getting Started
 
