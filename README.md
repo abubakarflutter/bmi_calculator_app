@@ -2,8 +2,8 @@
 
 A new Flutter application that calculates BMI with beautiful UI
 <p float="left">
-<img src="https://user-images.githubusercontent.com/55432552/112718870-08088b80-8eb3-11eb-95dd-7686feae00e9.png" width="400" />
-<img src="https://user-images.githubusercontent.com/55432552/112718906-30908580-8eb3-11eb-8741-4327a231cb1e.png" width="400" />
+<img src="https://user-images.githubusercontent.com/55432552/112718870-08088b80-8eb3-11eb-95dd-7686feae00e9.png" width="350" />
+<img src="https://user-images.githubusercontent.com/55432552/112718906-30908580-8eb3-11eb-8741-4327a231cb1e.png" width="350" />
 </p>
 
 
