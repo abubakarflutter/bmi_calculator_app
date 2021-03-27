@@ -4,6 +4,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'build_card.dart';
 import 'card_inside_data.dart';
 import 'constants.dart';
+import 'result_page.dart';
+import 'bottombutton.dart';
+import 'bmicalculation.dart';
+import 'circularButton.dart';
 
 
 
@@ -21,7 +25,9 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
 
   Gender selectedGender;
-  int height = 173;
+  int height = 165;
+  int weight = 70;
+  int age = 21;
 
   @override
   Widget build(BuildContext context) {
@@ -82,16 +88,25 @@ class _MainScreenState extends State<MainScreen> {
                       Text('cm', style: cardLabelTextStyle,),
                     ],
                   ),
-                  Slider(value: height.toDouble(),
-                      min: 120,
-                      max: 250,
-                      activeColor: Color(0xFFEB1555),
-                      inactiveColor: Color(0xFF808E98),
-                      onChanged: (double newValue){
-                    setState(() {
-                      height = newValue.toInt();
-                    });
-    })
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                      activeTrackColor: Colors.white,
+                      inactiveTrackColor: Color(0xFF808E98),
+                      thumbColor: bottomContainerColor,
+                      overlayColor: Color(0x20EB1555),
+                      thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                      overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
+                    ),
+                    child: Slider
+                      (value: height.toDouble(),
+                        min: 120,
+                        max: 250,
+                        onChanged: (double newValue){
+                      setState(() {
+                        height = newValue.toInt();
+                      });
+    }),
+                  )
                 ],
               ),
             ),
@@ -105,9 +120,23 @@ class _MainScreenState extends State<MainScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('WEIGHT', style: cardLabelTextStyle,),
-                      Text('60', style: cardBigTextStyle,),
+                      Text(weight.toString(), style: cardBigTextStyle,),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          CircularIconButton(icon: FontAwesomeIcons.minus,
+                            onPress: (){
+                              setState(() {
+                                weight--;
+                              });
+                            },),
+                          SizedBox(width: 10.0,),
+                          CircularIconButton(icon: FontAwesomeIcons.plus,
+                            onPress: (){
+                              setState(() {
+                                weight++;
+                              });
+                            },),
                         ],
                       )
                     ],
@@ -120,9 +149,24 @@ class _MainScreenState extends State<MainScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('AGE', style: cardLabelTextStyle,),
-                    Text('23', style: cardBigTextStyle,),
+                    Text(age.toString(), style: cardBigTextStyle,),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        CircularIconButton(icon: FontAwesomeIcons.minus,
+                          onPress: (){
+                            setState(() {
+                              age--;
+                            });
+                          },),
+                        SizedBox(width: 10.0,),
+                        CircularIconButton(icon: FontAwesomeIcons.plus,
+                          onPress: (){
+                          setState(() {
+                            age++;
+                          });
+                          },
+                        ),
                       ],
                     )
                   ],
@@ -130,26 +174,21 @@ class _MainScreenState extends State<MainScreen> {
               ),),
             ],
           ),),
-          Container(
-            margin: EdgeInsets.only(top: 10.0),
-            color: bottomContainerColor,
-            height: 60,
-            width: double.infinity,
-            child: TextButton(
-              onPressed: (){},
-              child: Text(
-                'CALCULATE',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30.0
-                ),
-              ),
-            ),
-          )
+          BottomButton(ontap: (){
+
+            CalculatorBrain calc = CalculatorBrain(height: height, weight: weight);
+
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage(
+      bmiInterpretationFinalPage: calc.resultInterpretation(),
+      bmiBigResultText: calc.BMICalculator(),
+      bmiSmallTextIndicator: calc.bmiTextResult(),
+    )));
+    }, insidetext: "CALCULATE",)
         ],
       ),
     );
   }
 }
+
 
 
